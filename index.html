@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Memory Match</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="fireworks.css">
 </head>
+
 <body>
-        <h1>Memory Match</h1>
+    <h1 class="title">Memory Match Game</h1>
+    <p id="timer">Welcome</p>
     <div id="memory-grid" class="wrapper">
         <div class="panel" id="grid1"></div>
         <div class="panel" id="grid2"></div>
@@ -23,10 +27,29 @@
         <div class="panel" id="grid11"></div>
         <div class="panel" id="grid12"></div>
     </div>
-    <div class="controls">
-            <button id="reset">Restart</button>
-            <span id="timer"></span>
+    <div class="controls" id="controls-box">
+        <button id="restart" class="btn btn-restart">Restart</button>
+        <span class="sound-controls"> Sound <a href="" id="sound-on" class="sound-active"> On</a> 
+            <a href="" id="sound-off">Off</a></span>
     </div>
+    <audio src="sounds/click-sound.mp3" id="game-sound"></audio>
+    <audio src="sounds/fireworks.mp3" id="fireworks-sound"></audio>
+
+    <footer class="footer">
+        <a href="" target="_blank" class="github-link">View source on <span>GitHub</span></a><br />
+        <a href="http://jsfiddle.net/elin/7m3bL/" target="_blank" class="attribution-link">Fireworks animation By <span>Eddie Lin</span></a>
+    </footer>
+   
+    <!-- modal -->
+    <div class="score-board pyro" id="modal">
+        <div class="before"></div>
+        <div class="after"></div>
+        <span class="modal-close" id="close">X</span>
+        <h2>Congratulations !!</h2>
+        <h3>You won in <span id='final-time' class="time"></span> seconds</h3>
+        <button id="play-again" class="btn btn-play-again">Play again</button>
+    </div>
+    
     <script src="main.js"></script>
 </body>
 </html>
