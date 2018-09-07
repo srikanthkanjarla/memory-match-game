@@ -14,6 +14,8 @@ body{
 .title{
     text-align: center;
     color:rgb(153, 124, 9);
+    margin:  0;
+    padding-top: 12px;
 }
 .wrapper {
     display: grid;
@@ -43,7 +45,8 @@ body{
 .controls{
     padding:1rem;
     max-width: 450px;
-    margin: 0 auto;
+    margin: 12px auto;
+
 }
 .btn{
     padding:0.8rem 3rem;
@@ -69,7 +72,7 @@ body{
     color:#E84855;
     font-weight: bold;
     float: right;
-    margin-top:10px;
+    margin: 10px 10px;
 }
 .sound-controls a{
     text-decoration: none;
@@ -78,22 +81,30 @@ body{
     border:2px solid #E1BC29;
     padding:3px 10px;
     border-radius:35px;
-    
+    margin: 0 5px;
 }
 .sound-controls a:hover{
     box-shadow: 0 0 10px 3px #E84855;
 }
-.sound-active{
+.sound-selected{
     background-color:rgb(153, 124, 9);
+    box-shadow: 0 0 10px 3px #E84855;
     color:#fff; 
     }
+.sound-disabled{
+    background-color:#FFFFFF;
+    color:#333;
 
-#timer{     
+}
+
+#timer{
     font-size: 18px;
     font-weight: bold;
     color:#E84855;
-    text-align:center; 
-     
+    text-align:center;
+    margin:  0;
+    padding: 12px;
+    margin-bottom: 12px;
 }
 #final-timer{
     color:rgb(226, 30, 46);
