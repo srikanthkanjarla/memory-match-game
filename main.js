@@ -179,10 +179,11 @@ document.getElementById('toggle-sound').addEventListener('click', e => {
     localStorage.soundSetting = 'false';
   }
 });
-/* */
+/* update checkbox value based on sound setting from localstorage */
 if (localStorage.soundSetting === 'true') {
   document.getElementById('toggle-sound').checked = true;
-} else {
+}
+if (localStorage.soundSetting === 'false') {
   document.getElementById('toggle-sound').checked = false;
 }
 /* function calls */
