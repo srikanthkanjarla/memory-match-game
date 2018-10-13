@@ -22,8 +22,7 @@ const completedCardColor = '#3BB273';
 const cardElements = document.getElementsByClassName('panel');
 const controlsElement = document.getElementById('controls-box');
 const modalElement = document.getElementById('modal');
-const soundOnElement = document.getElementById('sound-on');
-const soundOffElement = document.getElementById('sound-off');
+// const soundToggleElement = document.getElementById('sound-toggle');
 
 /* constructor to create object for each card with defaults */
 function CardsFactory(cardId, completed, clicked, value) {
@@ -150,18 +149,6 @@ function restart() {
   document.location.reload();
 }
 
-/* toggle audio buttons background based on soundSetting from local storage */
-function toggleSoundBtn() {
-  if (localStorage.soundSetting === 'false') {
-    soundOffElement.classList.replace('sound-disabled', 'sound-selected');
-    soundOnElement.classList.replace('sound-selected', 'sound-disabled');
-  }
-  if (localStorage.soundSetting === 'true') {
-    soundOffElement.classList.replace('sound-selected', 'sound-disabled');
-    soundOnElement.classList.replace('sound-disabled', 'sound-selected');
-  }
-}
-
 /* Event handlers */
 
 document.getElementById('restart').addEventListener('click', () => {
@@ -185,21 +172,19 @@ document.getElementById('close').addEventListener('click', () => {
 });
 
 /* game sound toggle on/off */
-document.getElementById('sound-on').addEventListener('click', e => {
-  e.preventDefault();
-  localStorage.soundSetting = 'true';
-  playGameSound();
-  toggleSoundBtn();
+document.getElementById('toggle-sound').addEventListener('click', e => {
+  if (e.target.checked) {
+    localStorage.soundSetting = 'true';
+  } else {
+    localStorage.soundSetting = 'false';
+  }
 });
-
-document.getElementById('sound-off').addEventListener('click', e => {
-  e.preventDefault();
-  localStorage.soundSetting = 'false';
-  playGameSound();
-  toggleSoundBtn();
-});
-
+/* */
+if (localStorage.soundSetting === 'true') {
+  document.getElementById('toggle-sound').checked = true;
+} else {
+  document.getElementById('toggle-sound').checked = false;
+}
 /* function calls */
 randomCardValues = shuffleArray(cardValues);
 loadGame();
-toggleSoundBtn();
