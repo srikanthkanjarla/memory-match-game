@@ -28,7 +28,7 @@ body {
     margin: 0 auto;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 20px 5px #e1bc29;
+    box-shadow: 0 0 3px 3px #eef0f2;
 }
 
 .panel {
@@ -39,9 +39,10 @@ body {
     align-items: center;
     font-size: 50px;
     font-weight: bold;
-    color: #fff;
     background: var(--color-background);
     border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px #fff, 2px 2px #ccc, 3px 3px #ccc, 4px 4px #ccc;
 }
 
 .panel:hover {
