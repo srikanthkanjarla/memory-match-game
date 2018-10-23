@@ -45,10 +45,16 @@ function shuffleArray(array) {
 }
 
 function playGameSound() {
-  if (localStorage.soundSetting === 'false') {
-    gameSound.pause();
-  } else {
+  if (localStorage.soundSetting === 'true') {
     gameSound.play();
+  } else {
+    gameSound.pause();
+  }
+}
+function playFireworksSound() {
+  if (localStorage.soundSetting === 'true') {
+    fireworksSound.play();
+    fireworksSound.loop = true;
   }
 }
 
@@ -83,8 +89,7 @@ function completeMatch(cardId) {
       document.getElementById('final-time').innerHTML += +' ' + elapsedTime;
       controlsElement.style.display = 'none';
     }, 200);
-    fireworksSound.play();
-    fireworksSound.loop = true;
+    playFireworksSound();
   }
 }
 
